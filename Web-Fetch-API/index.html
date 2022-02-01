@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test AJAX with XMLHttpRequest</title>
+</head>
+<body>
+<div id="books"></div>
+<script>
+    // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+    // https://developer.mozilla.org/en-US/docs/Web/API/Request/Request
+    // https://developer.mozilla.org/en-US/docs/Web/API/Response
+    // https://developer.mozilla.org/en-US/docs/Web/API/Response/json
+
+    const request = new Request('https://delphi-books.com/api/b/lastyear.json', {method: 'GET'});
+    fetch(request).then((reponse) => {
+        console.log(reponse);
+        if (reponse.ok) {
+            reponse.json().then((tabLivres) => {
+                console.log(tabLivres);
+                let liste = document.createElement('ul');
+                for (let i = 0; i < tabLivres.length; i++) {
+                    let lien = document.createElement('a');
+                    lien.setAttribute('href', tabLivres[i].url);
+                    lien.text = tabLivres[i].name;
+                    let item = document.createElement('li');
+                    item.appendChild(lien);
+                    liste.appendChild(item);
+                }
+                document.getElementById('books').appendChild(liste);
+            })
+        }
+    });
+</script>
+</body>
+</html>

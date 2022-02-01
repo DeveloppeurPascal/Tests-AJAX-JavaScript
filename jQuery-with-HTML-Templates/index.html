@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test AJAX with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div>
+    <button id="btnTousLivres">Tous les livres</button>
+    <button id="btnDerniersLivres">Derniers livres</button>
+</div>
+<div id="books"></div>
+<div id="Templates" style="display:none">
+    <ul id="tplListeLivres">
+        <li class="item"><a href="" class="link">titre</a></li>
+    </ul>
+</div>
+<script>
+    function chargeLivresParCode(url) {
+        $.ajax({
+            url: url,
+            type: 'get',
+            dataType: 'json',
+            success: (tabLivres) => {
+                // console.log(tabLivres);
+                let liste = $('<ul>');
+                for (let i = 0; i < tabLivres.length; i++) {
+                    livre = tabLivres[i];
+                    liste.append($('<li>').append($('<a>').attr('href', livre.url).text(livre.name)));
+                }
+                $('#books').empty().append(liste);
+            }
+        });
+    }
+
+    function chargeLivresTemplates(url) {
+        $.ajax({
+            url: url,
+            type: 'get',
+            dataType: 'json',
+            success: (tabLivres) => {
+                // console.log(tabLivres);
+                let liste = $('#tplListeLivres').clone().attr('id', '');
+                tabLivres.forEach((livre) => {
+                    // console.log(livre);
+                    let item = $('.item', liste).clone().removeClass('item');
+                    // $('.link', item).attr('href', livre.url);
+                    // $('.link', item).text(livre.name);
+                    $('.link', item).attr('href', livre.url).text(livre.name);
+                    liste.append(item);
+                });
+                $('.item', liste).remove();
+                $('#books').empty().append(liste);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#btnTousLivres').click(function () {
+            // chargeLivresParCode('https://delphi-books.com/api/b/all.json');
+            chargeLivresTemplates('https://delphi-books.com/api/b/all.json');
+        });
+
+        $('#btnDerniersLivres').click(function () {
+            // chargeLivresParCode('https://delphi-books.com/api/b/lastyear.json');
+            chargeLivresTemplates('https://delphi-books.com/api/b/lastyear.json');
+        });
+    });
+</script>
+</body>
+</html>

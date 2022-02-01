@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test AJAX with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div id="books"></div>
+<script>
+    // https://api.jquery.com/jQuery.ajax/
+    $(document).ready(function () {
+        $.ajax({
+            url: 'https://delphi-books.com/api/b/lastyear.json',
+            type: 'get',
+            dataType: 'json',
+            success: (tabLivres) => {
+                // console.log(tabLivres);
+                let liste = $('<ul>');
+                for (let i = 0; i < tabLivres.length; i++) {
+                    livre = tabLivres[i];
+                    liste.append($('<li>').append($('<a>').attr('href', livre.url).text(livre.name)));
+                }
+                $('#books').empty().append(liste);
+            }
+        });
+    });
+</script>
+</body>
+</html>

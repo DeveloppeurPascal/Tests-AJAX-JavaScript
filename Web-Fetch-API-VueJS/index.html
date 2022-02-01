@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test AJAX with XMLHttpRequest</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div>
+    <button onclick="chargeTousLesLivres()">Tous les livres</button>
+    <button onclick="chargeLesDerniersLivres()">Derniers livres</button>
+</div>
+<div>
+    <ul id="books">
+        <livres v-for="livre in livres">
+            <li><a href="{{livre.url}}">{{livre.name}}</a></li>
+        </livres>
+    </ul>
+</div>
+<script>
+    let app = new Vue({
+        el: '#books',
+        data: {
+            livres: []
+        }
+    });
+
+    function chargeLivres(url) {
+        const request = new Request(url, {method: 'GET'});
+        fetch(request).then((reponse) => {
+            console.log(reponse);
+            if (reponse.ok) {
+                reponse.json().then((tabLivres) => {
+                    app.livres = tabLivres;
+                })
+            }
+        });
+    }
+
+    function chargeTousLesLivres() {
+        chargeLivres('https://delphi-books.com/api/b/all.json');
+    }
+
+    function chargeLesDerniersLivres() {
+        chargeLivres('https://delphi-books.com/api/b/lastyear.json');
+    }
+</script>
+</body>
+</html>
