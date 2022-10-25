@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head><title>XMLHttpRequest for a POST request</title></head>
+<body>
+<script>
+    // https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest
+	
+    const request = new XMLHttpRequest();
+    request.open('POST', 'http://localhost/PHP-Dump/src/ajaxcalldump.php', true);
+    request.onload = callback;
+	request.responseType = 'json';
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send('key1=value1&key2=value2');
+
+    function callback() {
+		console.log(request.response);
+	}
+</script>
+</body>
+</html>

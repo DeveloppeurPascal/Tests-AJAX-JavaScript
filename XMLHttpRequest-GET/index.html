@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head><title>XMLHttpRequest for a GET request</title></head>
+<body>
+<script>
+    // https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest
+	
+    const request = new XMLHttpRequest();
+    request.open('GET', 'http://localhost/PHP-Dump/src/ajaxcalldump.php?key1=value1&key2=value2', true);
+    request.onload = callback;
+	request.responseType = 'json';
+	
+    request.send();
+
+    function callback() {
+		console.log(request.response);
+	}
+</script>
+</body>
+</html>
