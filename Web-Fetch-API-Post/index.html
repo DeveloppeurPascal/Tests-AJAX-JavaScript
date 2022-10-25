@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Fetch API for a POST request</title>
+</head>
+<body>
+<div id="books"></div>
+<script>
+    // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+    fetch('http://localhost/PHP-Dump/src/ajaxcalldump.php',{
+		method: 'POST',
+		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+		body: 'key1=value1&key2=value2'
+	}).then((reponse) => {
+        // console.log(reponse);
+        if (reponse.ok) {
+            reponse.json().then((json) => {
+                console.log(json);
+			})
+        }
+    });
+</script>
+</body>
+</html>
