@@ -1,67 +1,125 @@
-# Tests-AJAX-JavaScript
+# Using AJAX in JavaScript
 
-Exemples de solutions pour récupérer du JSON avec AJAX en JavaScript
+[Cette page en français.](LISEZMOI.md)
 
-L'API de [Delphi Books](https://delphi-books.com) a été utilisée pour sortir une liste de livres à afficher à l'écran. Les données sont
-accessibles par GET et retournées en JSON.
+Examples of solutions for retrieving JSON with AJAX in JavaScript
 
-Le développement de ces exemples a été effectué sur Twitch le 1 février 2022. [La rediffusion de cette session](https://serialstreameur.fr/comment-utiliser-ajax-depuis-javascript-pour-afficher-des-donnees-provenant-d-une-api-externe.html) est visible sur le site [Serial Streameur](https://serialstreameur.fr/). Des extraits sont également disponibles pour chaque exemple.
+The [Delphi Books](https://delphi-books.com) API was used to output a list of books to be displayed on the screen. The data is accessed via GET and returned as JSON.
 
-D'autres exemples ont été ajoutés depuis, hors stream, pour simplifier les copier/coller ou la création de projets simples sans devoir se taper la documentation "officielle" trop rarement limpide !
+These examples were developed on Twitch on February 1, 2022. [The replay of this session](https://serialstreameur.fr/comment-utiliser-ajax-depuis-javascript-pour-afficher-des-donnees-provenant-d-une-api-externe.html) can be viewed at [Serial Streameur](https://serialstreameur.fr/). Video excerpts are also available for each example.
 
-## jQuery (GET)
+Other examples have since been added, off-stream, to simplify copy/paste or the creation of simple projects without having to read the “official” documentation, which is rarely clear!
 
-Récupération de la liste des livres en utilisant la commande $.ajax() de jQuery. L'affichage se fait par création de
-HTML depuis jQuery.
+I've written some explanations on [using Ajax in JavaScript](https://trucs-de-developpeur-web.fr/ajax.html) on [this blog](https://trucs-de-developpeur-web.fr).
 
-[Voir la vidéo et les explications](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-jquery.html)
+## Samples list
 
-## jQuery-with-HTML-Templates (GET)
+### jQuery (GET)
 
-Récupération de la liste des livres en utilisant la commande $.ajax() de jQuery. Affichage par clonage d'un template
-HTML en jQuery.
+Retrieve the list of books using jQuery's $.ajax() command. Display is done by creating HTML from jQuery.
 
-[Voir la vidéo et les explications](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-jquery-et-un-template-html.html)
+[See the video and explanations](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-jquery.html)
 
-## Web-Fetch-API (GET)
+### jQuery-with-HTML-Templates (GET)
 
-Utilisation de l'API Fetch JavaScript récente pour récupérer les données. Affichage par création de code HTML par
-manipulation du DOM.
+Retrieve the list of books using jQuery's $.ajax() command. Display by cloning an HTML template in jQuery.
 
-[Voir la vidéo et les explications](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-fetchapi.html)
+[See the video and explanations](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-jquery-et-un-template-html.html)
 
-## Web-Fetch-API-Get (GET)
+### Web-Fetch-API (GET)
 
-Utilise Fetch API pour faire une requête GET avec deux paramètres à [un programme de dump en PHP](https://github.com/DeveloppeurPascal/PHP-API-Dump) côté serveur.
+Use of the latest JavaScript Fetch API to retrieve data. Display by creating HTML code through DOM manipulation.
 
-## Web-Fetch-API-Post (POST)
+[See the video and explanations](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-fetchapi.html)
 
-Utilise Fetch API pour faire une requête POST avec deux paramètres à [un programme de dump en PHP](https://github.com/DeveloppeurPascal/PHP-API-Dump) côté serveur.
+### Web-Fetch-API-Get (GET)
 
-## Web-Fetch-API-VueJS (GET)
+Uses Fetch API to make a GET request with two parameters to [a PHP dump program](https://github.com/DeveloppeurPascal/PHP-API-Dump) on the server side.
 
-Utilisation de l'API Fetch JavaScript récente pour récupérer les données. Affichage des données en utilisant VueJS.
+### Web-Fetch-API-Post (POST)
 
-[Voir la vidéo et les explications](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-fetch-api-et-vuejs-pour-l-affichage.html)
+Uses Fetch API to make a POST request with two parameters to [a PHP dump program](https://github.com/DeveloppeurPascal/PHP-API-Dump) on the server side.
 
-## XMLHttpRequest (GET)
 
-Utilisation de XMLHttpRequest pour récupérer les données. L'affichage étant fait aussi par manipulation du DOM.
+### Web-Fetch-API-VueJS (GET)
 
-[Voir la vidéo et les explications](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-xmlhttprequest.html)
+Use of the latest JavaScript Fetch API to retrieve data. Display data using VueJS.
 
-## XMLHttpRequest-GET (GET)
+[See the video and explanations](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-fetch-api-et-vuejs-pour-l-affichage.html)
 
-Une requête en GET pour montrer comment simuler un envoi de valeurs comme l'aurait fait un formulaire HTML classique avec une méthode GET.
+### XMLHttpRequest (GET)
 
-Utilise le programme [PHP API Dump](https://github.com/DeveloppeurPascal/PHP-API-Dump) comme destination des requêtes.
+Use of XMLHttpRequest to retrieve data. Display is also done by DOM manipulation.
 
-GET = QUERY_String => les paramètres sont envoyés dans l'URL.
+[See the video and explanations](https://trucs-de-developpeur-web.fr/faire-de-l-ajax-en-javascript-avec-xmlhttprequest.html)
 
-## XMLHttpRequest-POST (POST)
+### XMLHttpRequest-GET (GET)
 
-Une requête en POST pour montrer comment simuler un envoi de valeurs comme l'aurait fait un formulaire HTML classique avec une méthode POST.
+A GET request to show how to simulate sending values as a classic HTML form would have done with a GET method.
 
-Utilise le programme [PHP API Dump](https://github.com/DeveloppeurPascal/PHP-API-Dump) comme destination des requêtes.
+Use the [PHP API Dump](https://github.com/DeveloppeurPascal/PHP-API-Dump) program as the request destination.
 
-POST => les paramètes sont envoyés dans le corps de la demande, mais leur encapsulation dépend du content-Type ajouté dans le header de la requête.
+GET = QUERY_String => parameters are sent in the URL.
+
+### XMLHttpRequest-POST (POST)
+
+A POST request to demonstrate how to simulate the sending of values in the same way as a classic HTML form with a POST method.
+
+Uses the [PHP API Dump](https://github.com/DeveloppeurPascal/PHP-API-Dump) program as the request destination.
+
+POST => parameters are sent in the request body, but their encapsulation depends on the Content-Type added in the request header.
+
+## Talks and conferences
+
+### Twitch
+
+Follow my development streams of software, video games, mobile applications and websites on [my Twitch channel](https://www.twitch.tv/patrickpremartin) or as replays on [Serial Streameur](https://serialstreameur.fr) mostly in French.
+
+## Source code installation
+
+To download this code repository, we recommend using "git", but you can also download a ZIP file directly from [its GitHub repository](https://github.com/DeveloppeurPascal/Tests-AJAX-JavaScript).
+
+## Compatibility
+
+When I code, I work locally with XAMPP on Windows. My projects work for this stack.
+
+There's no guarantee of compatibility with other software or versions, even though I try to keep my code clean and avoid using too many specific things.
+
+If you detect any anomalies on earlier versions, please don't hesitate to [report them](https://github.com/DeveloppeurPascal/Tests-AJAX-JavaScript/issues) so that I can test and try to correct or provide a workaround.
+
+## License to use this code repository and its contents
+
+This source code is distributed under the [AGPL 3.0 or later license](https://choosealicense.com/licenses/agpl-3.0/).
+
+You are generally free to use the contents of this code repository anywhere, provided that:
+* you mention it in your projects
+* distribute the modifications made to the files supplied in this project under the AGPL license (leaving the original copyright notices (author, link to this repository, license) which must be supplemented by your own)
+* to distribute the source code of your creations under the AGPL license.
+
+If this license doesn't suit your needs, you can purchase the right to use this project under the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) or a dedicated commercial license ([contact the author](https://trucs-de-developpeur-web.fr/nous-contacter.php) to explain your needs).
+
+These source codes are provided as is, without warranty of any kind.
+
+Certain elements included in this repository may be subject to third-party usage rights (images, sounds, etc.). They are not reusable in your projects unless otherwise stated.
+
+## How to ask a new feature, report a bug or a security issue ?
+
+If you want an answer from the project owner the best way to ask for a new feature or report a bug is to go to [the GitHub repository](https://github.com/DeveloppeurPascal/Tests-AJAX-JavaScript) and [open a new issue](https://github.com/DeveloppeurPascal/Tests-AJAX-JavaScript/issues).
+
+If you found a security issue please don't report it publicly before a patch is available. Explain the case by [sending a private message to the author](https://trucs-de-developpeur-web.fr/nous-contacter.php).
+
+You also can fork the repository and contribute by submitting pull requests if you want to help. Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+## Support the project and its author
+
+If you think this project is useful and want to support it, please make a donation to [its author](https://github.com/DeveloppeurPascal). It will help to maintain the code and binaries.
+
+You can use one of those services :
+
+* [GitHub Sponsors](https://github.com/sponsors/DeveloppeurPascal)
+* Ko-fi [in French](https://ko-fi.com/patrick_premartin_fr) or [in English](https://ko-fi.com/patrick_premartin_en)
+* [Patreon](https://www.patreon.com/patrickpremartin)
+* [Liberapay](https://liberapay.com/PatrickPremartin)
+* [Paypal](https://www.paypal.com/paypalme/patrickpremartin)
+
+or if you speack french you can [subscribe to Zone Abo](https://zone-abo.fr/nos-abonnements.php) on a monthly or yearly basis and get a lot of resources as videos and articles.
